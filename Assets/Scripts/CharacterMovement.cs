@@ -32,27 +32,64 @@ public class CharacterMovement : MonoBehaviour {
     public PhysSettings physSettings = new PhysSettings();
     public InputSettings inputSettings = new InputSettings();
 
+    Vector3 velocity = Vector3.zero;
     Quaternion targetRotation;
 	private Rigidbody rBody;
     float forwardInput, turnInput;
 
-    public Quaternion TargetRotation;
+    public Quaternion TargetRotation
+    {
+        get { return targetRotation; }
+    }
+
+    bool Grounded()
+    {
+        return Physics.Raycast(transform.position, Vector3.down, moveSettings.distToGround, moveSettings.ground);
+    }
+
+    void GetInput()
+    {
+        forwardInput = Input.GetAxis("Vertical");
+        turnInput = Input.GetAxis("Horizontal");
+    }
+
+    void Turn()
+    {
+        if (Mathf.Abs(turnInput) > inputSettings.inputDelay)
+        {
+            targetRotation *= Quaternion.AngleAxis(moveSettings.rotateVel * turnInput * Time.deltaTime, Vector3.up);
+        }
+        transform.rotation = targetRotation;
+    }
+
+    void Run()
+    {
+        if (Mathf.Abs(forwardInput) > inputSettings.inputDelay)
+        {
+            // move
+            rBody.velocity = transform.forward * forwardInput * moveSettings.forwardVel;
+        }
+        else
+            // zero velocity
+            rBody.velocity = Vector3.zero;
+    }
 
 	// Use this for initialization
 	void Start () {
+        targetRotation = transform.rotation;
 		rBody = GetComponent<Rigidbody>();
+
+        forwardInput = turnInput = 0;
 	}
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
+    void Update()
+    {
+        GetInput();
+        Turn();
+    }
+    
 	void FixedUpdate () {
-		float x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
-		float z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
-
-		transform.Rotate(0, x, 0);
-		transform.Translate(0, 0, z);
-
-		if (Input.GetKeyDown ("space")){
-			//transform.position += transform.up * Time.deltaTime * jumpSpeed;
-		} 
+        Run();
 	}
 }
