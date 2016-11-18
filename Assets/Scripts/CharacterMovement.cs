@@ -36,6 +36,8 @@ public class CharacterMovement : MonoBehaviour {
 	private Rigidbody rBody;
     float forwardInput, turnInput;
 
+    public Quaternion TargetRotation;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
