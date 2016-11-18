@@ -40,7 +40,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rb = GetComponent<Rigidbody>();
+		rBody = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -52,7 +52,7 @@ public class CharacterMovement : MonoBehaviour {
 		transform.Translate(0, 0, z);
 
 		if (Input.GetKeyDown ("space")){
-			transform.position += transform.up * Time.deltaTime * jumpSpeed;
+			//transform.position += transform.up * Time.deltaTime * jumpSpeed;
 		} 
 	}
 }
