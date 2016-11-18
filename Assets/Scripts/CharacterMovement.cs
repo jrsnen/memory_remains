@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour {
 		public float rotateVel  = 100;
         public float jumpVel = 25;
         public float distToGround = 0.1f;
-        public LayerMask ground;
+        public LayerMask ground; 
 	}
 
 	[System.Serializable]
@@ -23,15 +23,18 @@ public class CharacterMovement : MonoBehaviour {
 	public class InputSettings
 	{
 		public float inputDelay = 0.1f;
-	}
+        public string FORWARD_AXIS = "Vertical";
+        public string TURN_AXIS = "Horizontal";
+        public string JUMP_AXIS = "Jump";
+    }
 
     public MoveSettings moveSettings = new MoveSettings();
     public PhysSettings physSettings = new PhysSettings();
     public InputSettings inputSettings = new InputSettings();
 
-    public float jumpSpeed;
-
-	private Rigidbody rb;
+    Quaternion targetRotation;
+	private Rigidbody rBody;
+    float forwardInput, turnInput;
 
 	// Use this for initialization
 	void Start () {
