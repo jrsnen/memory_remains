@@ -10,6 +10,7 @@ TagManager:
   - PickUpKey0
   - PickUpKey1
   - Drawer
+  - Respawner
   layers:
   - Default
   - TransparentFX
