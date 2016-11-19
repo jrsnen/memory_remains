@@ -1,28 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterMovement : MonoBehaviour {
+public class CharacterMovement : MonoBehaviour
+{
 
-	[System.Serializable]
-	public class MoveSettings
-	{
-		public float forwardVel = 12;
-		public float rotateVel  = 100;
+    [System.Serializable]
+    public class MoveSettings
+    {
+        public float forwardVel = 12;
+        public float rotateVel = 100;
         public float jumpVel = 25;
         public float distToGround = 0.1f;
-        public LayerMask ground; 
-	}
+        public LayerMask ground;
+    }
 
-	[System.Serializable]
-	public class PhysSettings
-	{
+    [System.Serializable]
+    public class PhysSettings
+    {
         public float downAccel = 0.75f;
-	}
+    }
 
-	[System.Serializable]
-	public class InputSettings
-	{
-		public float inputDelay = 0.1f;
+    [System.Serializable]
+    public class InputSettings
+    {
+        public float inputDelay = 0.1f;
         public string FORWARD_AXIS = "Vertical";
         public string TURN_AXIS = "Horizontal";
         public string JUMP_AXIS = "Jump";
@@ -34,7 +35,7 @@ public class CharacterMovement : MonoBehaviour {
 
     Vector3 velocity = Vector3.zero;
     Quaternion targetRotation;
-	private Rigidbody rBody;
+    private Rigidbody rBody;
     float forwardInput, turnInput;
 
     public Quaternion TargetRotation
@@ -74,13 +75,14 @@ public class CharacterMovement : MonoBehaviour {
             rBody.velocity = Vector3.zero;
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         targetRotation = transform.rotation;
-		rBody = GetComponent<Rigidbody>();
+        rBody = GetComponent<Rigidbody>();
 
         forwardInput = turnInput = 0;
-	}
+    }
 
     // Update is called once per frame
     void Update()
@@ -88,8 +90,9 @@ public class CharacterMovement : MonoBehaviour {
         GetInput();
         Turn();
     }
-    
-	void FixedUpdate () {
+
+    void FixedUpdate()
+    {
         Run();
-	}
+    }
 }
