@@ -51,8 +51,8 @@ public class CharacterMovement : MonoBehaviour
 
     void GetInput()
     {
-        forwardInput = Input.GetAxis("Vertical");
-        turnInput = Input.GetAxis("Horizontal");
+        forwardInput = Input.GetAxis(inputSettings.FORWARD_AXIS);
+        turnInput = Input.GetAxis(inputSettings.TURN_AXIS);
         jumpInput = Input.GetAxisRaw(inputSettings.JUMP_AXIS);
     }
 
@@ -106,7 +106,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (jumpInput > 0 && Grounded())
         {
-            Debug.Log("YEEEEEEEEEA");
+            //Debug.Log("YEEEEEEEEEA");
             velocity.y = moveSettings.jumpVel;
         }
         else if (jumpInput == 0 && Grounded())
