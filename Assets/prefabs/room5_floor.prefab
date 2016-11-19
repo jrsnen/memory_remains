@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000011669681002}
   - 33: {fileID: 33000012597632514}
   - 23: {fileID: 23000013360673556}
+  - 65: {fileID: 65000013544265682}
   m_Layer: 0
   m_Name: room5_floor
   m_TagString: Untagged
@@ -34,10 +35,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012301176302}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -195, y: -9, z: 17}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -192, y: -9, z: 13}
+  m_LocalScale: {x: 100, y: 99.99992, z: 99.99992}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -77,3 +78,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012301176302}
   m_Mesh: {fileID: 4300000, guid: 46dcc8dd1b6743240bbd9824359cbaab, type: 3}
+--- !u!65 &65000013544265682
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012301176302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.08, z: 0.01009272}
+  m_Center: {x: 0, y: -3.5856122e-17, z: -0.0050463006}
