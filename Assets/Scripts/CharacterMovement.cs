@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
         public float forwardVel = 12;
         public float rotateVel = 100;
         public float jumpVel = 25;
-        public float distToGround = 0.1f;
+        public float distToGround = 0.6f;
         public LayerMask ground;
     }
 
@@ -45,6 +45,7 @@ public class CharacterMovement : MonoBehaviour
 
     bool Grounded()
     {
+        
         return Physics.Raycast(transform.position, Vector3.down, moveSettings.distToGround, moveSettings.ground);
     }
 
@@ -93,6 +94,7 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //if (Grounded()) Debug.Log("YEEEEEEEEEA");
         Run();
     }
 }
