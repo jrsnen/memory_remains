@@ -58,6 +58,7 @@ ModelImporter:
     4300000: Cube
     7400000: metarig|Idle
     7400002: metarig|Walk
+    7400004: metarig|Walk0
     9500000: //RootNode
     13700000: Cube
   materials:
@@ -82,8 +83,8 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig|Idle
-      takeName: metarig|Idle
+      name: metarig|Walk0
+      takeName: metarig|Walk
       firstFrame: 0
       lastFrame: 40
       wrapMode: 0
