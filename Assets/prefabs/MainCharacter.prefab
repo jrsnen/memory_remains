@@ -941,7 +941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4623b06348d554f8b4b941875c301f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryImage: {fileID: 0}
 --- !u!114 &114000012775903336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -953,7 +952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654b16767f0ef034bbf2259e107f49ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryImage: {fileID: 0}
+  memoryImage: {fileID: 1000013018964936, guid: 928eedd7a29f83048b8276a93adab357,
+    type: 2}
 --- !u!114 &114000012864817504
 MonoBehaviour:
   m_ObjectHideFlags: 1
