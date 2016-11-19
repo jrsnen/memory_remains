@@ -292,25 +292,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd9fdabaa49a52943ba2746037b4c1e5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &970634748 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010513989596, guid: 8b1be94c69751cc4f9f1df6a9d3221f4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1985281648}
---- !u!111 &970634749
-Animation:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 970634748}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1571967996
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,11 +394,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 95000012565399184, guid: 8b1be94c69751cc4f9f1df6a9d3221f4,
-        type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: edb850ab1c5ade2439ee3cb4f8b5596f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b1be94c69751cc4f9f1df6a9d3221f4, type: 2}
   m_IsPrefabParent: 0
