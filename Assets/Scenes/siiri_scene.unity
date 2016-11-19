@@ -3168,14 +3168,6 @@ Prefab:
       propertyPath: m_Name
       value: floorpiece1 (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4000011694191298, guid: 0e22c4850d15cda4ab3f5155f3a9c89e, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 99.99997
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000011694191298, guid: 0e22c4850d15cda4ab3f5155f3a9c89e, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 99.99997
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e22c4850d15cda4ab3f5155f3a9c89e, type: 2}
   m_IsPrefabParent: 0
@@ -3223,26 +3215,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 23000013761003230, guid: 125c9bcc4ce7e5c4c85cbdb5bb52139b,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 31e53a2fd7239b848998fcf8f7010cd9, type: 2}
     - target: {fileID: 1000012758240424, guid: 125c9bcc4ce7e5c4c85cbdb5bb52139b, type: 2}
       propertyPath: m_Name
       value: room2_floorback (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010794689832, guid: 125c9bcc4ce7e5c4c85cbdb5bb52139b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 100.00012
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010794689832, guid: 125c9bcc4ce7e5c4c85cbdb5bb52139b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 100.00012
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000010794689832, guid: 125c9bcc4ce7e5c4c85cbdb5bb52139b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 125c9bcc4ce7e5c4c85cbdb5bb52139b, type: 2}
