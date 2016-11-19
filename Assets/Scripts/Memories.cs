@@ -14,7 +14,8 @@ public class Memories : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Memory"))
         {
-            memoryImage.SetActive(true);
+            //memoryImage.SetActive(true);
+            Instantiate(memoryImage);
             Debug.Log("Found memory");
         }
     }
