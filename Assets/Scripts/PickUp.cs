@@ -7,6 +7,10 @@ public class PickUp : MonoBehaviour
     public Transform handPlaceholder;
     public Animation animation;
 
+    private const string PICKUP_TAG = "PickUp";
+    private const string DoorTrigger_TAG = "DoorTrigger";
+    private const string Key0_TAG = "Key0";
+
     private bool holding = false;
     private bool firstTimeEnteringExitTrigger = false;
     GameObject attachedObject;
@@ -27,8 +31,8 @@ public class PickUp : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        log("trigger enter, holding = " +holding);
-        if(!holding && other.gameObject.CompareTag("PickUp"))
+        //log("gameObject.tag =  " + gameObject.tag);
+        if(!holding && other.gameObject.tag.Contains(Key0_TAG))
         {
             holding = true;
             attachedObject = other.gameObject;
@@ -41,7 +45,7 @@ public class PickUp : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && holding)
         {
-            log(attachedObject.name);
+            //log(attachedObject.name);
             attachedObject.transform.parent = null;
             attachedObject.transform.localPosition = transform.position;
             holding = false;
@@ -50,9 +54,9 @@ public class PickUp : MonoBehaviour
     
     void doorTrigger(Collider other)
     {
-        if (other.gameObject.CompareTag("DoorTrigger") && holding)
+        if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding)
         {
-            log("staying");
+            log("doorTrigger");
             animation.Play();
         }
     }

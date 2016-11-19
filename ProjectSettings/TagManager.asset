@@ -7,6 +7,7 @@ TagManager:
   - PickUp
   - Memory
   - DoorTrigger
+  - PickUpKey0
   layers:
   - Default
   - TransparentFX
