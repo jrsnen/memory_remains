@@ -57,6 +57,7 @@ public class PickUp : MonoBehaviour
     
     void doorTrigger(Collider other)
     {
+        log("doorTrigger starrted");
         if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding && attachedObject.tag.Contains(Key0_TAG))
         {
             log("doorTrigger");

@@ -24,7 +24,7 @@ GameObject:
   - 23: {fileID: 23000010572887316}
   m_Layer: 0
   m_Name: PickObjectKey0
-  m_TagString: PickUpKey
+  m_TagString: PickUpKey0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014020708722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6188397, y: -1.1551042e-17, z: 11.921976}
+  m_LocalPosition: {x: -7.750019, y: 0.50000596, z: -4.546015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
