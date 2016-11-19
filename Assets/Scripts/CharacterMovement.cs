@@ -72,7 +72,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if(!walking)
             {
-                animator.SetBool("IsWalking", true);
+                //animator.SetBool("IsWalking", true);
                 Debug.Log("Started walking");
                 walking = true;
             }
@@ -82,7 +82,7 @@ public class CharacterMovement : MonoBehaviour
             if (walking)
             {
                 animator.SetBool("IsWalking", false);
-                Debug.Log("Stopped walking");
+                //Debug.Log("Stopped walking");
                 walking = false;
             }
         }
