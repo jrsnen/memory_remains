@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 316c5d6b55a3f2b4e87a58c638b508cf
-timeCreated: 1479590076
+guid: 46a6a00c4f4e1fd47af3f6671a21f101
+timeCreated: 1479590119
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: book
+    4300000: radio
   materials:
     importMaterials: 1
     materialName: 0
