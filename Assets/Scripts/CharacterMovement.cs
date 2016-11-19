@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
     Vector3 velocity = Vector3.zero;
     Quaternion targetRotation;
     private Rigidbody rBody;
-    float forwardInput, turnInput;
+    float forwardInput, turnInput, jumpInput;
 
     public Quaternion TargetRotation
     {
@@ -53,6 +53,7 @@ public class CharacterMovement : MonoBehaviour
     {
         forwardInput = Input.GetAxis("Vertical");
         turnInput = Input.GetAxis("Horizontal");
+        jumpInput = Input.GetAxisRaw(inputSettings.JUMP_AXIS);
     }
 
     void Turn()
@@ -69,11 +70,11 @@ public class CharacterMovement : MonoBehaviour
         if (Mathf.Abs(forwardInput) > inputSettings.inputDelay)
         {
             // move
-            rBody.velocity = transform.forward * forwardInput * moveSettings.forwardVel;
+            velocity.z = forwardInput * moveSettings.forwardVel;
         }
         else
             // zero velocity
-            rBody.velocity = Vector3.zero;
+            velocity.z = 0;
     }
 
     // Use this for initialization
@@ -96,5 +97,26 @@ public class CharacterMovement : MonoBehaviour
     {
         //if (Grounded()) Debug.Log("YEEEEEEEEEA");
         Run();
+        Jump();
+
+        rBody.velocity = transform.TransformDirection(velocity);
+    }
+
+    void Jump()
+    {
+        if (jumpInput > 0 && Grounded())
+        {
+            Debug.Log("YEEEEEEEEEA");
+            velocity.y = moveSettings.jumpVel;
+        }
+        else if (jumpInput == 0 && Grounded())
+        {
+            // zero velocity
+            velocity.y = 0;
+        }
+        else
+        {
+            velocity.y -= physSettings.downAccel;
+        }
     }
 }
