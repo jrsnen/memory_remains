@@ -70,7 +70,7 @@ public class CharacterMovement : MonoBehaviour
         if (Mathf.Abs(forwardInput) > inputSettings.inputDelay)
         {
             // move
-            velocity.z = forwardInput * moveSettings.forwardVel;
+            velocity.z = forwardInput * moveSettings.forwardVel * Time.deltaTime * 100;
         }
         else
             // zero velocity
