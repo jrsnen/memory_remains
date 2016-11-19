@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c1f021fef05b81c47a8c41f5b3196ba8
-timeCreated: 1479495433
+guid: 369d6ef3165f1fe418e512f5f548f183
+timeCreated: 1479578539
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -56,6 +56,15 @@ ModelImporter:
     400046: upper_arm.L
     400048: upper_arm.R
     4300000: Cube
+    7400000: metarig|Action
+    7400002: metarig|BadMemory
+    7400004: metarig|Fall
+    7400006: metarig|Idle
+    7400008: metarig|Jump
+    7400010: metarig|Landing
+    7400012: metarig|metarig.001|metarig|Idle|metarig|Idle
+    7400014: metarig|Walk
+    7400016: metarig|Walk.001
     9500000: //RootNode
     13700000: Cube
   materials:
