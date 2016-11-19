@@ -1562,6 +1562,11 @@ Prefab:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011710564364, guid: 8b1be94c69751cc4f9f1df6a9d3221f4,
+        type: 2}
+      propertyPath: animation
+      value: 
+      objectReference: {fileID: 1758957072}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b1be94c69751cc4f9f1df6a9d3221f4, type: 2}
   m_IsPrefabParent: 0
@@ -1775,6 +1780,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013547860236, guid: 95c7dc07045f2fe478f1f0bcdd63a52c,
     type: 2}
   m_PrefabInternal: {fileID: 1751367161}
+--- !u!111 &1758957072 stripped
+Animation:
+  m_PrefabParentObject: {fileID: 111000010402074598, guid: 7bd05f75d3ceb444f9601a255f5fa648,
+    type: 2}
+  m_PrefabInternal: {fileID: 90550755}
 --- !u!4 &1781735970 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000012113439828, guid: db11950c0b19816439aad15934bcb8da,
