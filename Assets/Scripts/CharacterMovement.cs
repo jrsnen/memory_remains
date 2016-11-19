@@ -5,6 +5,7 @@ public class CharacterMovement : MonoBehaviour
 {
     private Animator animator;
     private bool walking = false;
+    private bool jumping = false;
     [System.Serializable]
     public class MoveSettings
     {
@@ -72,8 +73,8 @@ public class CharacterMovement : MonoBehaviour
         {
             if(!walking)
             {
-                //animator.SetBool("IsWalking", true);
-                Debug.Log("Started walking");
+                animator.SetBool("IsWalking", true);
+                //Debug.Log("Started walking");
                 walking = true;
             }
         }
@@ -128,12 +129,24 @@ public class CharacterMovement : MonoBehaviour
     {
         if (jumpInput > 0 && Grounded())
         {
-            //Debug.Log("YEEEEEEEEEA");
+            if (!jumping)
+            {
+                Debug.Log("jump");
+                animator.SetBool("isJumping", true);
+                jumping = true;
+            }
+            
             velocity.y = moveSettings.jumpVel;
         }
         else if (jumpInput == 0 && Grounded())
         {
-            // zero velocity
+            if (jumping)
+            {
+                jumping = false;
+                Debug.Log("down");
+                animator.SetBool("isJumping", false);
+            }
+
             velocity.y = 0;
         }
         else
