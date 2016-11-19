@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CharacterMovement : MonoBehaviour
 {
+    private Animator animator;
 
     [System.Serializable]
     public class MoveSettings
@@ -45,7 +46,6 @@ public class CharacterMovement : MonoBehaviour
 
     bool Grounded()
     {
-        
         return Physics.Raycast(transform.position, Vector3.down, moveSettings.distToGround, moveSettings.ground);
     }
 
@@ -67,6 +67,18 @@ public class CharacterMovement : MonoBehaviour
 
     void Run()
     {
+        if (Mathf.Abs(forwardInput) > 0.001f)
+        {
+            animator.SetBool("IsWalking", true);
+            Debug.Log("Started walking");
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+            Debug.Log("Stopped walking");
+
+        }
+
         if (Mathf.Abs(forwardInput) > inputSettings.inputDelay)
         {
             // move
@@ -84,6 +96,8 @@ public class CharacterMovement : MonoBehaviour
         rBody = GetComponent<Rigidbody>();
 
         forwardInput = turnInput = 0;
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame

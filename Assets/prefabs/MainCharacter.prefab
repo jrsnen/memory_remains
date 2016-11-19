@@ -85,6 +85,7 @@ GameObject:
   - 114: {fileID: 114000012864817504}
   - 114: {fileID: 114000011710564364}
   - 114: {fileID: 114000012775903336}
+  - 111: {fileID: 111000012235242092}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -700,7 +701,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010513989596}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9894905, y: 0.17, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -951,7 +952,7 @@ Animator:
   m_GameObject: {fileID: 1000010513989596}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c1f021fef05b81c47a8c41f5b3196ba8, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: edb850ab1c5ade2439ee3cb4f8b5596f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -959,6 +960,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!111 &111000012235242092
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010513989596}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &114000011710564364
 MonoBehaviour:
   m_ObjectHideFlags: 1
