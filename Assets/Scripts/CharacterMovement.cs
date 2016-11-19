@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterMovement : MonoBehaviour
 {
     private Animator animator;
-
+    private bool walking = false;
     [System.Serializable]
     public class MoveSettings
     {
@@ -67,16 +67,24 @@ public class CharacterMovement : MonoBehaviour
 
     void Run()
     {
-        if (Mathf.Abs(forwardInput) > 0.001f)
+        if (Mathf.Abs(forwardInput) > 0.01f )
+        //if (Input.GetKey("up"))
         {
-            animator.SetBool("IsWalking", true);
-            Debug.Log("Started walking");
+            if(!walking)
+            {
+                animator.SetBool("IsWalking", true);
+                Debug.Log("Started walking");
+                walking = true;
+            }
         }
         else
         {
-            animator.SetBool("IsWalking", false);
-            Debug.Log("Stopped walking");
-
+            if (walking)
+            {
+                animator.SetBool("IsWalking", false);
+                Debug.Log("Stopped walking");
+                walking = false;
+            }
         }
 
         if (Mathf.Abs(forwardInput) > inputSettings.inputDelay)
