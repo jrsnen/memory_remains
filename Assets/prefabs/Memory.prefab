@@ -22,6 +22,7 @@ GameObject:
   - 33: {fileID: 33000013068976128}
   - 135: {fileID: 135000012908664648}
   - 23: {fileID: 23000010482829908}
+  - 114: {fileID: 114000011751290700}
   m_Layer: 0
   m_Name: Memory
   m_TagString: Memory
@@ -78,6 +79,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013324686694}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114000011751290700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013324686694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcef1fd292619f4791a56d999f498ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 4
 --- !u!135 &135000012908664648
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -10,7 +10,9 @@ public class Memories : MonoBehaviour
         if (other.gameObject.CompareTag("Memory"))
         {
             //memoryImage.SetActive(true);
-            Instantiate(memoryImage);
+            SlowText o = Instantiate(memoryImage).GetComponent(typeof(SlowText)) as SlowText;
+            o.memNum = other.gameObject.GetComponent<memoryNumber>().number;
+
             Debug.Log("Found memory");
         }
     }
