@@ -23,7 +23,7 @@ GameObject:
   - 65: {fileID: 65000013940177972}
   - 23: {fileID: 23000010572887316}
   m_Layer: 0
-  m_Name: PickObjectKey
+  m_Name: PickObjectKey0
   m_TagString: PickUpKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -32,7 +32,7 @@ public class PickUp : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //log("gameObject.tag =  " + gameObject.tag);
-        if(!holding && other.gameObject.tag.Contains(Key0_TAG))
+        if(!holding && other.gameObject.tag.Contains(PICKUP_TAG))
         {
             holding = true;
             attachedObject = other.gameObject;
@@ -54,7 +54,7 @@ public class PickUp : MonoBehaviour
     
     void doorTrigger(Collider other)
     {
-        if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding)
+        if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding && attachedObject.tag.Contains(Key0_TAG))
         {
             log("doorTrigger");
             animation.Play();
