@@ -8,6 +8,8 @@ TagManager:
   - Memory
   - DoorTrigger
   - PickUpKey0
+  - PickUpKey1
+  - Drawer
   layers:
   - Default
   - TransparentFX

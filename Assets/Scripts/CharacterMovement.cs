@@ -70,12 +70,12 @@ public class CharacterMovement : MonoBehaviour
         if (Mathf.Abs(forwardInput) > 0.001f)
         {
             animator.SetBool("IsWalking", true);
-            Debug.Log("Started walking");
+            //Debug.Log("Started walking");
         }
         else
         {
             animator.SetBool("IsWalking", false);
-            Debug.Log("Stopped walking");
+            //Debug.Log("Stopped walking");
 
         }
 
