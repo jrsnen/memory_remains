@@ -13,6 +13,8 @@ public class PickUp : MonoBehaviour
     private const string Key0_TAG = "Key0";
     private const string Key1_TAG = "Key1";
 
+    private bool isDoorOpen = false;
+
     private bool holding = false;
     private bool firstTimeEnteringExitTrigger = false;
     GameObject attachedObject;
@@ -57,11 +59,13 @@ public class PickUp : MonoBehaviour
     
     void doorTrigger(Collider other)
     {
+        if (isDoorOpen) return;
         log("doorTrigger starrted");
         if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding && attachedObject.tag.Contains(Key0_TAG))
         {
             log("doorTrigger");
             animation.Play();
+            isDoorOpen = true;
         }
     }
 
