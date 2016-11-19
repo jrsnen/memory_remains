@@ -14,6 +14,12 @@ public class GameMenu : MonoBehaviour {
 
     public void onClickStartGame()
     {
+        Application.LoadLevel(1);
+    }
+
+    public void onClickCredits()
+    {
+        Application.LoadLevel(2);
         Debug.Log("Drag ended!");
     }
 }
