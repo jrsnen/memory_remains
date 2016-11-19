@@ -17,7 +17,11 @@ public class PickUp : MonoBehaviour
 
     void Update()
     {
-        if (holding) attachedObject.transform.position = handPlaceholder.transform.position;
+        if (holding)
+        {
+            attachedObject.transform.position = handPlaceholder.transform.position;
+            attachedObject.transform.rotation = handPlaceholder.transform.rotation;
+        }
         checkDropItem();
     }
 
@@ -28,17 +32,10 @@ public class PickUp : MonoBehaviour
         {
             holding = true;
             attachedObject = other.gameObject;
-            moveToHand(other.gameObject);
         }
         doorTrigger(other);
     }
-
-    void moveToHand(GameObject attached)
-    {
-        //attached.transform.parent = this.transform;
-        Vector3 hand = new Vector3(1, 3, 0);
-        attached.transform.localPosition = hand;
-    }
+    
 
     void checkDropItem()
     {
@@ -66,6 +63,3 @@ public class PickUp : MonoBehaviour
         Debug.Log(text);
     }
 }
-
-
-
