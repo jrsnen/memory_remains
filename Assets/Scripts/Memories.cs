@@ -30,7 +30,8 @@ public class Memories : MonoBehaviour
     {
         if(!memoryPlaying)
         {
-            animator.SetBool("IsWalking", true);
+            if(suffer)
+                animator.SetBool("IsSuffering", true);
 
             CharacterMovement c = this.gameObject.GetComponent<CharacterMovement>();
             c.enabled = false;
