@@ -19,7 +19,6 @@ public class PickUp : MonoBehaviour
     private bool isDoor1Open = false;
 
     private bool holding = false;
-    private bool firstTimeEnteringExitTrigger = false;
     GameObject attachedObject;
     Memories memoriesScript;
 

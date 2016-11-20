@@ -6,10 +6,12 @@ public class Memories : MonoBehaviour
     public GameObject memoryImage;
 
     public float wait = 3.0f;
+    public AudioClip[] audioClips;
 
     private bool memoryPlaying = false;
 
     private Animator animator;
+    private AudioSource audioSource;
 
     void start()
     {
@@ -20,9 +22,14 @@ public class Memories : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Memory"))
         {
+            Debug.Log("yes");
             createMemory(other.gameObject.GetComponent<memoryNumber>().number,
                 other.gameObject.GetComponent<memoryNumber>().suffer,
                 other.gameObject.GetComponent<memoryNumber>().image);
+            // Audio
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = audioClips[other.gameObject.GetComponent<memoryNumber>().number];
+            audioSource.Play();
         }
     }
 
