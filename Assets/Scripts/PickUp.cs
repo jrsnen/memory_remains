@@ -27,8 +27,15 @@ public class PickUp : MonoBehaviour
     {
         if (holding)
         {
-            attachedObject.transform.position = handPlaceholder.transform.position;
-            attachedObject.transform.rotation = handPlaceholder.transform.rotation;
+            if (!isDoorOpen)
+            {
+                attachedObject.transform.position = handPlaceholder.transform.position;
+                attachedObject.transform.rotation = handPlaceholder.transform.rotation;
+            }
+            else
+            {
+                
+            }
         }
         checkDropItem();
     }
@@ -60,13 +67,12 @@ public class PickUp : MonoBehaviour
     void doorTrigger(Collider other)
     {
         if (isDoorOpen) return;
-        log("doorTrigger starrted");
         if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding && attachedObject.tag.Contains(Key0_TAG))
         {
             log("doorTrigger");
             animation.Play();
+            attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f ,0, 1.45f);
             isDoorOpen = true;
-            attachedObject.transform.position = new Vector3(0, 0, 0);
         }
     }
 
