@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933ed7e062b37894d85fb2765b7fe385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followed: {fileID: 0}
+  followed: {fileID: 1000011350379334}
   horizontalSpeed: 5
   verticalSpeed: 5
 --- !u!114 &114000011710564364
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4623b06348d554f8b4b941875c301f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handPlaceholder: {fileID: 0}
+  handPlaceholder: {fileID: 4000011003237000}
   animation: {fileID: 0}
 --- !u!114 &114000012775903336
 MonoBehaviour:
