@@ -9,6 +9,12 @@ public class CameraMouseControl : MonoBehaviour {
     private float distance = 0.0f;
     private float maxAngle = 45.0f;
 
+    public float horizontalSpeed = 5.0f;
+    public float verticalSpeed = 5.0f;
+
+    private float horizontalMove = 0.0f;
+    private float verticalMove = 0.0f;
+
 	// Use this for initialization
 	void Start () {
         distance = Vector3.Distance(followed.transform.position, this.transform.position);
@@ -27,7 +33,10 @@ public class CameraMouseControl : MonoBehaviour {
     }
 
     void getInput()
-    { }
+    {
+        verticalMove = Input.GetAxis("Mouse X") * Time.deltaTime;
+        horizontalMove = Input.GetAxis("Mouse Y") * Time.deltaTime;
+    }
 
     void changePosition()
     { }
