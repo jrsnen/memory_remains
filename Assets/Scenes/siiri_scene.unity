@@ -1232,6 +1232,10 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012119562088, guid: 7bd05f75d3ceb444f9601a255f5fa648, type: 2}
+      propertyPath: m_TagString
+      value: unconditionDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bd05f75d3ceb444f9601a255f5fa648, type: 2}
   m_IsPrefabParent: 0
@@ -2193,15 +2197,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012322641928, guid: 40dea277bc92ac84193546bca98ddaf1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -156.87233
+      value: -3.37
       objectReference: {fileID: 0}
     - target: {fileID: 4000012322641928, guid: 40dea277bc92ac84193546bca98ddaf1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 21
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 4000012322641928, guid: 40dea277bc92ac84193546bca98ddaf1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -11.683444
+      value: -4.82
       objectReference: {fileID: 0}
     - target: {fileID: 4000012322641928, guid: 40dea277bc92ac84193546bca98ddaf1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -9905,15 +9909,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011669232388, guid: 54b6efed1ba74db4a9e4f998693bff58, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -190
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 4000011669232388, guid: 54b6efed1ba74db4a9e4f998693bff58, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8.8
+      value: 4.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000011669232388, guid: 54b6efed1ba74db4a9e4f998693bff58, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 17
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 4000011669232388, guid: 54b6efed1ba74db4a9e4f998693bff58, type: 2}
       propertyPath: m_LocalRotation.x
