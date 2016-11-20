@@ -10,13 +10,16 @@ public class PickUp : MonoBehaviour
     private const string PICKUP_TAG = "PickUp";
     private const string DoorTrigger_TAG = "DoorTrigger";
     private const string DoorTrigger1_TAG = "DoorTrigger1";
+    private const string DoorTrigger2_TAG = "DoorTrigger2";
     private const string UnCondDoorTrigger_TAG = "unconditionDoor";
     private const string BookTrigger = "Book";
     private const string Key0_TAG = "Key0";
     private const string Key1_TAG = "Key1";
+    private const string Key2_TAG = "Key2";
 
     private bool isDoorOpen = false;
     private bool isDoor1Open = false;
+    private bool isDoor2Open = false;
 
     private bool holding = false;
     GameObject attachedObject;
@@ -57,6 +60,7 @@ public class PickUp : MonoBehaviour
         }
         doorTrigger(other);
         doorTrigger1(other);
+        doorTrigger2(other);
         bookTrigger(other);
     }
 
@@ -93,11 +97,23 @@ public class PickUp : MonoBehaviour
             log("door1Trigger");
             other.GetComponentInParent<Animation>().Play();
             attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f, 0, 1.45f);
-            isDoorOpen = true;
+            isDoor1Open = true;
             holding = false;
         }
     }
 
+    void doorTrigger2(Collider other)
+    {
+        if (isDoor2Open) return;
+        if (other.gameObject.CompareTag(DoorTrigger2_TAG) && holding && attachedObject.tag.Contains(Key2_TAG))
+        {
+            log("door2Trigger");
+            other.GetComponentInParent<Animation>().Play();
+            attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f, 0, 1.45f);
+            isDoor2Open = true;
+            holding = false;
+        }
+    }
 
 
     void bookTrigger(Collider other)

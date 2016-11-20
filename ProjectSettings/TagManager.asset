@@ -15,6 +15,8 @@ TagManager:
   - Book
   - unconditionDoor
   - DoorTrigger1
+  - PickUpKey2
+  - DoorTrigger2
   layers:
   - Default
   - TransparentFX
