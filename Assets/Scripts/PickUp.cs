@@ -15,7 +15,6 @@ public class PickUp : MonoBehaviour
     private const string Key1_TAG = "Key1";
 
     private bool isDoorOpen = false;
-    private bool isUnCondiDoorOpen = false;
 
     private bool holding = false;
     private bool firstTimeEnteringExitTrigger = false;
@@ -56,7 +55,6 @@ public class PickUp : MonoBehaviour
             attachedObject = other.gameObject;
         }
         doorTrigger(other);
-        unCondDoorTrigger(other);
         bookTrigger(other);
     }
 
@@ -85,19 +83,7 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    void unCondDoorTrigger(Collider other)
-    {
-        log("uncond");
-        if (isUnCondiDoorOpen) return;
-        if (other.gameObject.CompareTag(UnCondDoorTrigger_TAG))
-        {
-            log("unCondDoorTrigger");
 
-            other.GetComponentInParent<Animation>().Play();
-            //attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f, 0, 1.45f);
-            isUnCondiDoorOpen = true;
-        }
-    }
 
     void bookTrigger(Collider other)
     {
