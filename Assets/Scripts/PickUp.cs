@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Linq;
-public class PickUp : MonoBehaviour 
+public class PickUp : MonoBehaviour
 {
     public const string DROP_BUTTON = "E";
     public Transform handPlaceholder;
@@ -9,18 +9,25 @@ public class PickUp : MonoBehaviour
 
     private const string PICKUP_TAG = "PickUp";
     private const string DoorTrigger_TAG = "DoorTrigger";
-    private const string DRAWER_TAG = "Drawer";
+    private const string UnCondDoorTrigger_TAG = "unconditionDoor";
+    private const string BookTrigger = "Book";
     private const string Key0_TAG = "Key0";
     private const string Key1_TAG = "Key1";
 
     private bool isDoorOpen = false;
+    private bool isUnCondiDoorOpen = false;
 
     private bool holding = false;
     private bool firstTimeEnteringExitTrigger = false;
     GameObject attachedObject;
+    Memories memoriesScript;
+
+    // createMemory > number
+
     // Use this for initialization
-    void Start () 
+    void Start()
     {
+        memoriesScript = GetComponent<Memories>();
     }
 
     void Update()
@@ -34,7 +41,7 @@ public class PickUp : MonoBehaviour
             }
             else
             {
-                
+
             }
         }
         checkDropItem();
@@ -43,15 +50,16 @@ public class PickUp : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         //log("gameObject.tag =  " + gameObject.tag);
-        if(!holding && other.gameObject.tag.Contains(PICKUP_TAG))
+        if (!holding && other.gameObject.tag.Contains(PICKUP_TAG))
         {
             holding = true;
             attachedObject = other.gameObject;
         }
         doorTrigger(other);
-        drawerTrigger(other);
+        unCondDoorTrigger(other);
+        bookTrigger(other);
     }
-    
+
 
     void checkDropItem()
     {
@@ -63,7 +71,7 @@ public class PickUp : MonoBehaviour
             holding = false;
         }
     }
-    
+
     void doorTrigger(Collider other)
     {
         if (isDoorOpen) return;
@@ -71,17 +79,34 @@ public class PickUp : MonoBehaviour
         {
             log("doorTrigger");
             animation.Play();
-            attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f ,0, 1.45f);
+            attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f, 0, 1.45f);
             isDoorOpen = true;
+            holding = false;
         }
     }
 
-    void drawerTrigger(Collider other)
+    void unCondDoorTrigger(Collider other)
     {
-        if (other.gameObject.CompareTag(DRAWER_TAG) && holding && attachedObject.tag.Contains(Key1_TAG))
+        log("uncond");
+        if (isUnCondiDoorOpen) return;
+        if (other.gameObject.CompareTag(UnCondDoorTrigger_TAG))
         {
-            log("drawer opens");
-            //animation.Play();
+            log("unCondDoorTrigger");
+
+            other.GetComponentInParent<Animation>().Play();
+            //attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f, 0, 1.45f);
+            isUnCondiDoorOpen = true;
+        }
+    }
+
+    void bookTrigger(Collider other)
+    {
+        if (other.gameObject.CompareTag(BookTrigger) && holding && attachedObject.tag.Contains(Key1_TAG))
+        {
+            log("books opens");
+            memoriesScript.createMemory(7);
+            holding = false;
+            Object.Destroy(attachedObject.gameObject);
         }
     }
 
