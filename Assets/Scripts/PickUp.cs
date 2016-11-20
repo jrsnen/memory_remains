@@ -81,6 +81,7 @@ public class PickUp : MonoBehaviour
             animation.Play();
             attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f ,0, 1.45f);
             isDoorOpen = true;
+            holding = false;
         }
     }
 
@@ -104,6 +105,8 @@ public class PickUp : MonoBehaviour
         {
             log("books opens");
             memoriesScript.createMemory(7);
+            holding = false;
+            Object.Destroy(attachedObject.gameObject);
         }
     }
 
