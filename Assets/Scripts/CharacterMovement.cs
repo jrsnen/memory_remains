@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public bool dontMove = false;
+
     private Animator animator;
     private bool walking = false;
     private bool jumping = false;
@@ -64,6 +66,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Turn()
     {
+        if (dontMove) return;
         if (Mathf.Abs(turnInput) > inputSettings.inputDelay)
         {
             targetRotation *= Quaternion.AngleAxis(moveSettings.rotateVel * turnInput * Time.deltaTime, Vector3.up);
@@ -73,6 +76,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Run()
     {
+        if (dontMove) return;
         if (Mathf.Abs(forwardInput) > 0.01f )
         //if (Input.GetKey("up"))
         {
@@ -132,6 +136,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Jump()
     {
+        if (dontMove) return;
         if (jumpInput > 0 && Grounded())
         {
             if (!jumping)
