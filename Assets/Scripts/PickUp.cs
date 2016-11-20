@@ -18,12 +18,14 @@ public class PickUp : MonoBehaviour
     private bool holding = false;
     private bool firstTimeEnteringExitTrigger = false;
     GameObject attachedObject;
+    Memories memoriesScript;
 
     // createMemory > number
 
     // Use this for initialization
     void Start () 
     {
+        memoriesScript = GetComponent<Memories>();
     }
 
     void Update()
@@ -84,6 +86,7 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.CompareTag(BookTrigger) && holding && attachedObject.tag.Contains(Key1_TAG))
         {
             log("books opens");
+            memoriesScript.createMemory(7);
             //animation.Play();
         }
     }
