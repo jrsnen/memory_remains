@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Memories : MonoBehaviour
 {
@@ -12,24 +12,32 @@ public class Memories : MonoBehaviour
 
     private Animator animator;
     private AudioSource audioSource;
+    private List<uint> numberAlreadyPlayed = new List<uint>();
 
     void start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
+        //audioSource = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other)
     {
+        foreach (uint value in numberAlreadyPlayed)
+        {
+            if (other.gameObject.GetComponent<memoryNumber>().number == value) return;
+        }
         if (other.gameObject.CompareTag("Memory"))
         {
-            Debug.Log("yes");
+            if (animator == null) animator = GetComponent<Animator>();
+            if (audioSource == null) audioSource = GetComponent<AudioSource>();
             createMemory(other.gameObject.GetComponent<memoryNumber>().number,
                 other.gameObject.GetComponent<memoryNumber>().suffer,
                 other.gameObject.GetComponent<memoryNumber>().image);
             // Audio
-            audioSource = GetComponent<AudioSource>();
             audioSource.clip = audioClips[other.gameObject.GetComponent<memoryNumber>().number];
             audioSource.Play();
+
+            numberAlreadyPlayed.Add(other.gameObject.GetComponent<memoryNumber>().number);
         }
     }
 
