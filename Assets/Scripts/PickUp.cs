@@ -66,6 +66,7 @@ public class PickUp : MonoBehaviour
             log("doorTrigger");
             animation.Play();
             isDoorOpen = true;
+            attachedObject.transform.position = new Vector3(0, 0, 0);
         }
     }
 
