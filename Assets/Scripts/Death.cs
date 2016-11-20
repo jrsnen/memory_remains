@@ -15,10 +15,14 @@ public class Death : MonoBehaviour {
 
     private bool falling = false;
 
+    private Animator anim;
+
 	// Use this for initialization
 	void Start () {
         fallDuration = 0.0f;
         rb = this.gameObject.GetComponent<Rigidbody>();
+
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -38,9 +42,11 @@ public class Death : MonoBehaviour {
             if (fallDuration > deathLimit)
             {
                 Respawn();
+                anim.SetBool("isFalling", false);
             }
             else
             {
+                anim.SetBool("isFalling", true);
                 StartFall();
             }
         }
@@ -64,6 +70,8 @@ public class Death : MonoBehaviour {
     void StartFall()
     {
         Debug.Log("Starting fall");
+
+        
         // stop camera and wait
 
         falling = true;

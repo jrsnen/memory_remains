@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Memories : MonoBehaviour
 {
@@ -22,38 +23,52 @@ public class Memories : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        foreach (uint value in numberAlreadyPlayed)
-        {
-            if (other.gameObject.GetComponent<memoryNumber>().number == value) return;
-        }
+
         if (other.gameObject.CompareTag("Memory"))
         {
+            Debug.Log("Found some memory:" + other.gameObject.GetComponent<memoryNumber>().number);
+
+            foreach (uint value in numberAlreadyPlayed)
+            {
+                if (other.gameObject.GetComponent<memoryNumber>().number == value)
+                {
+                    Debug.Log("Memory has already been seen:" + other.gameObject.GetComponent<memoryNumber>().number);
+                    return;
+                }
+            }
+
+            Debug.Log("middle memory");
+
             if (animator == null) animator = GetComponent<Animator>();
             if (audioSource == null) audioSource = GetComponent<AudioSource>();
+
+            StartCoroutine(
             createMemory(other.gameObject.GetComponent<memoryNumber>().number,
                 other.gameObject.GetComponent<memoryNumber>().suffer,
-                other.gameObject.GetComponent<memoryNumber>().image);
+                other.gameObject.GetComponent<memoryNumber>().image));
             // Audio
             audioSource.clip = audioClips[other.gameObject.GetComponent<memoryNumber>().number];
             audioSource.Play();
 
-            numberAlreadyPlayed.Add(other.gameObject.GetComponent<memoryNumber>().number);
+            Debug.Log("end memory");
+
+            
         }
     }
 
-    public void createMemory(uint memoryNumber, bool suffer, bool image)
+    public IEnumerator createMemory(uint memoryNumber, bool suffer, bool image)
     {
+        Debug.Log("Trying to play memory");
         if(!memoryPlaying)
         {
+            Debug.Log("Found a new memory:" + memoryNumber);
+
             if(suffer)
-                animator.SetBool("IsSuffering", true);
+                animator.SetBool("isSuffering", true);
 
             CharacterMovement c = this.gameObject.GetComponent<CharacterMovement>();
-            c.enabled = false;
 
             
-
-            c.enabled = true;
 
             SlowText o = Instantiate(memoryImage).GetComponent(typeof(SlowText)) as SlowText;
             o.memNum = memoryNumber;
@@ -61,7 +76,13 @@ public class Memories : MonoBehaviour
 
             memoryPlaying = true;
 
-            Debug.Log("Found memory");
+            numberAlreadyPlayed.Add(memoryNumber);
+
+            yield return new WaitForSeconds(wait);
+
+            animator.SetBool("isSuffering", false);
+
+            Debug.Log("Memory ended");
         }
         else
         {
