@@ -13,7 +13,7 @@ public class Memories : MonoBehaviour
         }
     }
 
-    void createMemory(uint memoryNumber)
+    public void createMemory(uint memoryNumber)
     {
         SlowText o = Instantiate(memoryImage).GetComponent(typeof(SlowText)) as SlowText;
         o.memNum = memoryNumber;

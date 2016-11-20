@@ -40,9 +40,11 @@ public class CameraMouseControl : MonoBehaviour {
 
     void changePosition()
     {
-        float x;
-        float y;
-        float z;
+        float x = 0.0f;
+        float y = 0.0f;
+        float z = 0.0f;
+
+
     }
 
 }
