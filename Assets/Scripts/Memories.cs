@@ -46,9 +46,7 @@ public class Memories : MonoBehaviour
             createMemory(other.gameObject.GetComponent<memoryNumber>().number,
                 other.gameObject.GetComponent<memoryNumber>().suffer,
                 other.gameObject.GetComponent<memoryNumber>().image));
-            // Audio
-            audioSource.clip = audioClips[other.gameObject.GetComponent<memoryNumber>().number];
-            audioSource.Play();
+
 
             Debug.Log("end memory");
 
@@ -69,11 +67,10 @@ public class Memories : MonoBehaviour
                 animator.SetBool("isSuffering", true);
                 c.dontMove = true;
             }
-                
 
-            
-
-            
+            // Audio
+            audioSource.clip = audioClips[memoryNumber];
+            audioSource.Play();
 
             SlowText o = Instantiate(memoryImage).GetComponent(typeof(SlowText)) as SlowText;
             o.memNum = memoryNumber;
