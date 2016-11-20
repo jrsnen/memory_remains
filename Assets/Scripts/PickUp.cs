@@ -18,6 +18,9 @@ public class PickUp : MonoBehaviour
     private bool holding = false;
     private bool firstTimeEnteringExitTrigger = false;
     GameObject attachedObject;
+
+    // createMemory > number
+
     // Use this for initialization
     void Start () 
     {
