@@ -21,7 +21,6 @@ GameObject:
   - 4: {fileID: 4000013065839430}
   - 33: {fileID: 33000011058740828}
   - 65: {fileID: 65000012268167454}
-  - 23: {fileID: 23000010544984652}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: DoorTrigger
@@ -84,10 +83,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012119562088}
-  m_LocalRotation: {x: -0, y: -0.63015795, z: -0, w: -0.776467}
-  m_LocalPosition: {x: 16.32, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: -281.594, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -28, y: 4, z: 2}
+  m_LocalScale: {x: 1, y: 0.7, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_Children:
   - {fileID: 4000013065839430}
   - {fileID: 4000012976131580}
@@ -127,41 +126,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010752475972}
   m_LocalRotation: {x: -0, y: 0.74933445, z: -0, w: 0.6621918}
-  m_LocalPosition: {x: -1.95, y: 1.79, z: -0.51}
-  m_LocalScale: {x: 1.5080743, y: 4.9733806, z: 3.4314349}
+  m_LocalPosition: {x: -1.95, y: 0.8, z: -0.51}
+  m_LocalScale: {x: 2.8167048, y: 9.919243, z: 3.4314349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010953694434}
   m_RootOrder: 0
---- !u!23 &23000010544984652
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010752475972}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 05f11e91413c34f4288644b042764418, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &23000012922577374
 MeshRenderer:
   m_ObjectHideFlags: 1
