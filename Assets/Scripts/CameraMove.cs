@@ -12,6 +12,9 @@ public class CameraMove : MonoBehaviour {
 	void Update () {
         position.y += Time.deltaTime;
         this.transform.position = position;
+
+        float randomNumber = Random.Range(14, 18); 
+        if (position.y > randomNumber) Application.LoadLevel(2);
 	}
 
 }
