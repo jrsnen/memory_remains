@@ -9,7 +9,7 @@ public class PickUp : MonoBehaviour
 
     private const string PICKUP_TAG = "PickUp";
     private const string DoorTrigger_TAG = "DoorTrigger";
-    private const string DRAWER_TAG = "Drawer";
+    private const string BookTrigger = "Book";
     private const string Key0_TAG = "Key0";
     private const string Key1_TAG = "Key1";
 
@@ -49,7 +49,7 @@ public class PickUp : MonoBehaviour
             attachedObject = other.gameObject;
         }
         doorTrigger(other);
-        drawerTrigger(other);
+        bookTrigger(other);
     }
     
 
@@ -76,11 +76,11 @@ public class PickUp : MonoBehaviour
         }
     }
 
-    void drawerTrigger(Collider other)
+    void bookTrigger(Collider other)
     {
-        if (other.gameObject.CompareTag(DRAWER_TAG) && holding && attachedObject.tag.Contains(Key1_TAG))
+        if (other.gameObject.CompareTag(BookTrigger) && holding && attachedObject.tag.Contains(Key1_TAG))
         {
-            log("drawer opens");
+            log("books opens");
             //animation.Play();
         }
     }

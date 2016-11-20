@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/Scenes/siiri_scene.unity
   - enabled: 1
     path: Assets/Scenes/Credits.unity
+  - enabled: 1
+    path: Assets/Scenes/End_scene.unity

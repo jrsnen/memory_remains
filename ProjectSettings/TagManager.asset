@@ -11,6 +11,8 @@ TagManager:
   - PickUpKey1
   - Drawer
   - Respawner
+  - MainCharacter
+  - Book
   layers:
   - Default
   - TransparentFX
