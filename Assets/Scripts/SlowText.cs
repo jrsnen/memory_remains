@@ -18,7 +18,7 @@ public class SlowText : MonoBehaviour {
     "I read the note. It was a hospital bill. Who’s was it?",
     "The lights. The noises. They pierced through me. I could barely move. I stared at her lying there. Her eyes closed. Red trail of blood escaped from the corner of her mouth. This wasn’t real, this couldn’t be happening, could it? The horror engulf me…",
     "I read the letter. “Patient is released from the treatment” What treatment? Who was treated and where?",
-    "I was backing her clothes when I found her diary. I reached for the book with shaking hands. When I read her words It was as if she was still here, whispering her words to me. I felt the guilt and sorrow wash over me.",
+    "I was packing her clothes when I found her diary. I reached for the book with shaking hands. When I read her words It was as if she was still here, whispering her words to me. I felt the guilt and sorrow wash over me.",
     "What is this document? Patience is suffering from deep depression and psychotic behavior...",
     "The music played on the radio. She turned it off. I looked at her but I couldn't read her",
     "The door is finally open.",
@@ -26,6 +26,8 @@ public class SlowText : MonoBehaviour {
     "I wasn’t there to stop her from herself. I made one mistake. Could I punish myself forever for it? Would I..."};
 
     public uint memNum = 0;
+
+    public Memories mem;
 
 	// Use this for initialization
 	void Start () {
@@ -53,6 +55,8 @@ public class SlowText : MonoBehaviour {
         Debug.Log("TexWrite finished");
 
         yield return new WaitForSeconds(destroyWait);
+
+        mem.memoryEnded();
 
         Destroy(this.gameObject);
     }

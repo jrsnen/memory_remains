@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+
 public class CameraMouseControl : MonoBehaviour {
 
 
@@ -43,6 +45,11 @@ public class CameraMouseControl : MonoBehaviour {
         float x = 0.0f;
         float y = 0.0f;
         float z = 0.0f;
+
+        float firstAngle = horizontalMove;
+        //float secondAngle = 90.0f*Mathf.PI/180.0f;
+
+        x += distance * Mathf.Sin(firstAngle);
 
 
     }
