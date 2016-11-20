@@ -47,7 +47,7 @@ public class SlowText : MonoBehaviour {
         Debug.Log("TexWrite starting:" + strComplete.Length);
         while (i < strComplete.Length)
         {
-            Debug.Log("Writing text:" + i + "/" + strComplete.Length);
+            //Debug.Log("Writing text:" + i + "/" + strComplete.Length);
             str += strComplete[i++];
             text.text = str;
             yield return new WaitForSeconds(textWait);

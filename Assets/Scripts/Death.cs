@@ -27,7 +27,7 @@ public class Death : MonoBehaviour {
         if (rb.velocity.y < 0)
         {
             fallDuration += Time.deltaTime;
-            Debug.Log("Falling:" + fallDuration);
+            //Debug.Log("Falling:" + fallDuration);
         }
         else
         {
