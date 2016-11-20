@@ -104,7 +104,7 @@ public class PickUp : MonoBehaviour
         if (other.gameObject.CompareTag(BookTrigger) && holding && attachedObject.tag.Contains(Key1_TAG))
         {
             log("books opens");
-            memoriesScript.createMemory(7);
+            memoriesScript.createMemory(7, true, true);
             holding = false;
             Object.Destroy(attachedObject.gameObject);
         }
