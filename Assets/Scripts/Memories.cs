@@ -63,10 +63,15 @@ public class Memories : MonoBehaviour
         {
             Debug.Log("Found a new memory:" + memoryNumber);
 
-            if(suffer)
-                animator.SetBool("isSuffering", true);
-
             CharacterMovement c = this.gameObject.GetComponent<CharacterMovement>();
+            if(suffer)
+            {
+                animator.SetBool("isSuffering", true);
+                c.dontMove = true;
+            }
+                
+
+            
 
             
 
@@ -81,7 +86,7 @@ public class Memories : MonoBehaviour
             yield return new WaitForSeconds(wait);
 
             animator.SetBool("isSuffering", false);
-
+            c.dontMove = false;
             Debug.Log("Memory ended");
         }
         else
