@@ -161,11 +161,11 @@ MonoBehaviour:
 
     Programming
 
-    Modeling and voices
+    Modeling and Voices
 
     Level design
 
-    Story and level design
+    Story and Level design
 
     Music'
 --- !u!222 &206583199
@@ -390,6 +390,7 @@ GameObject:
   - 223: {fileID: 1396722533}
   - 114: {fileID: 1396722532}
   - 114: {fileID: 1396722531}
+  - 114: {fileID: 1396722535}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -475,6 +476,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1396722535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1396722530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a6da89f0843f8846aad5ac70bfd3f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439008473
 GameObject:
   m_ObjectHideFlags: 0

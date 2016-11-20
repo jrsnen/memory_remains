@@ -15,7 +15,7 @@ public class GameMenu : MonoBehaviour {
 
     public void onClickStartGame()
     {
-        
+        UnityEngine.Cursor.visible = false;
         Application.LoadLevel(1);
     }
 

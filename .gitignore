@@ -1,30 +1,53 @@
 Library
+
 Temp
+
 Obj
+
 Builds
+
 Build
-# ===================================== #
-# Visual Studio / MonoDevelop generated #
-# ===================================== #
+
 ExportedObj/
+
 obj/
+
+bin/
+
 *.svd
+
 *.userprefs
-/*.csproj
+/
+*.csproj
+
 *.pidb
+
 *.suo
-/*.sln
+/
+*.sln
+
 *.user
+
 *.unityproj
+
 *.booproj
+
+
 
 # ============ #
 # OS generated #
 # ============ #
+
+
 .DS_Store
+
 .DS_Store?
+
 ._*
+
 .Spotlight-V100
+
 .Trashes
 ehthumbs.db
+
 Thumbs.db

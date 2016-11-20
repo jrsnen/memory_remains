@@ -52,6 +52,8 @@ public class CameraMouseControl : MonoBehaviour {
         x += distance * Mathf.Sin(firstAngle);
 
 
+        // TODO: finish this maybe?
+
     }
 
 }
