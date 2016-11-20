@@ -64,9 +64,16 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    void GetNoInput()
+    {
+        forwardInput = 0.0f;
+        turnInput = 0.0f;
+        jumpInput = 0.0f;
+    }
+
     void Turn()
     {
-        if (dontMove) return;
+        //if (dontMove) return;
         if (Mathf.Abs(turnInput) > inputSettings.inputDelay)
         {
             targetRotation *= Quaternion.AngleAxis(moveSettings.rotateVel * turnInput * Time.deltaTime, Vector3.up);
@@ -76,7 +83,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Run()
     {
-        if (dontMove) return;
+        //if (dontMove) return;
         if (Mathf.Abs(forwardInput) > 0.01f )
         //if (Input.GetKey("up"))
         {
@@ -121,7 +128,10 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetInput();
+        if (!dontMove)
+            GetInput();
+        else
+            GetNoInput();
         Turn();
     }
 
@@ -136,7 +146,7 @@ public class CharacterMovement : MonoBehaviour
 
     void Jump()
     {
-        if (dontMove) return;
+        //if (dontMove) return;
         if (jumpInput > 0 && Grounded())
         {
             if (!jumping)

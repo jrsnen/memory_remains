@@ -28,7 +28,7 @@ public class Death : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (rb.velocity.y < 0)
+        if (rb.velocity.y < -0.5f)
         {
             fallDuration += Time.deltaTime;
             //Debug.Log("Falling:" + fallDuration);
