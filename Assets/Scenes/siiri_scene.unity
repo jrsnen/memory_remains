@@ -638,6 +638,10 @@ Prefab:
       propertyPath: m_Name
       value: door_final
       objectReference: {fileID: 0}
+    - target: {fileID: 1000010752475972, guid: 7bd05f75d3ceb444f9601a255f5fa648, type: 2}
+      propertyPath: m_TagString
+      value: DoorTrigger1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7bd05f75d3ceb444f9601a255f5fa648, type: 2}
   m_IsPrefabParent: 0
@@ -1346,6 +1350,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 68fcc90b3032bbb42ab37e11e14783ba, type: 2}
+    - target: {fileID: 1000014020708722, guid: 40dea277bc92ac84193546bca98ddaf1, type: 2}
+      propertyPath: m_TagString
+      value: PickUpKey1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40dea277bc92ac84193546bca98ddaf1, type: 2}
   m_IsPrefabParent: 0
