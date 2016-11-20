@@ -37,7 +37,7 @@ public class PickUp : MonoBehaviour
             if (!isDoorOpen)
             {
                 attachedObject.transform.position = handPlaceholder.transform.position;
-                attachedObject.transform.rotation = handPlaceholder.transform.rotation;
+               attachedObject.transform.rotation = handPlaceholder.transform.rotation ;
             }
             else
             {
@@ -104,7 +104,6 @@ public class PickUp : MonoBehaviour
         {
             log("books opens");
             memoriesScript.createMemory(7);
-            //animation.Play();
         }
     }
 
