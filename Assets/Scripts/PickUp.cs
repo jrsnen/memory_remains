@@ -57,6 +57,7 @@ public class PickUp : MonoBehaviour
             attachedObject = other.gameObject;
         }
         doorTrigger(other);
+        doorTrigger1(other);
         bookTrigger(other);
     }
 
@@ -75,10 +76,10 @@ public class PickUp : MonoBehaviour
     void doorTrigger(Collider other)
     {
         if (isDoorOpen) return;
-        if (other.gameObject.CompareTag(DoorTrigger1_TAG) && holding && attachedObject.tag.Contains(Key1_TAG))
+        if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding && attachedObject.tag.Contains(Key0_TAG))
         {
             log("doorTrigger");
-            animation.Play();
+            other.GetComponentInParent<Animation>().Play();
             attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f, 0, 1.45f);
             isDoorOpen = true;
             holding = false;
@@ -88,10 +89,10 @@ public class PickUp : MonoBehaviour
     void doorTrigger1(Collider other)
     {
         if (isDoor1Open) return;
-        if (other.gameObject.CompareTag(DoorTrigger_TAG) && holding && attachedObject.tag.Contains(Key1_TAG))
+        if (other.gameObject.CompareTag(DoorTrigger1_TAG) && holding && attachedObject.tag.Contains(Key1_TAG))
         {
-            log("doorTrigger");
-            GetComponentInParent<Animation>().Play();
+            log("door1Trigger");
+            other.GetComponentInParent<Animation>().Play();
             attachedObject.transform.position = other.gameObject.transform.position + new Vector3(-3.05f, 0, 1.45f);
             isDoorOpen = true;
             holding = false;
