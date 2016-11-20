@@ -5,6 +5,7 @@ public class GameMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Debug.Log("Main menu");
 	
 	}
 	
@@ -14,6 +15,7 @@ public class GameMenu : MonoBehaviour {
 
     public void onClickStartGame()
     {
+        
         Application.LoadLevel(1);
     }
 
@@ -22,6 +24,12 @@ public class GameMenu : MonoBehaviour {
         Application.LoadLevel(2);
         Debug.Log("Drag ended!");
     }
+
+    public void onClickExit()
+    {
+        Application.Quit();
+    }
+
 }
 /*
 var isQuit = false;
