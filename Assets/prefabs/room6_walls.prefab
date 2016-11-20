@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000012331215054}
   - 33: {fileID: 33000013145910830}
   - 23: {fileID: 23000010895430196}
+  - 65: {fileID: 65000010999242528}
   m_Layer: 0
   m_Name: room6_walls
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011883147152}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -195, y: -28, z: 49}
+  m_LocalPosition: {x: -180, y: -28, z: 57}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
   m_Children: []
@@ -77,3 +78,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011883147152}
   m_Mesh: {fileID: 4300000, guid: 9720c6e16601fb243a4505477b37eaaf, type: 3}
+--- !u!65 &65000010999242528
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011883147152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08, y: 0.010092723, z: 0.08}
+  m_Center: {x: 0, y: 0.0049536987, z: 0.04}
