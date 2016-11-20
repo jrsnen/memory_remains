@@ -10,10 +10,10 @@ public class EndingScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("enter");
         if (other.gameObject.CompareTag("MainCharacter"))
         {
-            Debug.Log("yes");
+            // End scene
+            Application.LoadLevel(3);
         }
     }
 }
