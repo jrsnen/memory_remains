@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EndingScript : MonoBehaviour {
 
@@ -13,7 +13,7 @@ public class EndingScript : MonoBehaviour {
         if (other.gameObject.CompareTag("MainCharacter"))
         {
             // End scene
-            Application.LoadLevel(3);
+            SceneManager.LoadScene(3);
         }
     }
 }

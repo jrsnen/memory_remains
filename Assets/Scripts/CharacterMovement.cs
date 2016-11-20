@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CharacterMovement : MonoBehaviour
 {
@@ -55,6 +55,11 @@ public class CharacterMovement : MonoBehaviour
         forwardInput = Input.GetAxis(inputSettings.FORWARD_AXIS);
         turnInput = Input.GetAxis(inputSettings.TURN_AXIS);
         jumpInput = Input.GetAxisRaw(inputSettings.JUMP_AXIS);
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     void Turn()
